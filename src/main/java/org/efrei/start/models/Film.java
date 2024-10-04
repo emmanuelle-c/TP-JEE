@@ -40,15 +40,10 @@ public class Film {
     @JoinColumn(name = "director_id")
     private Director director;
 
-    public List<Actor> getActors() {
-        return this.actors;
-    }
+    @ManyToOne
+    @JoinColumn(name = "theatre_id")
+    private Theatre theatre;
 
-    public Director getDirector() {
-        return this.director;
-    }
-
-    
     public Film() {}
     
     public Film(String title, String duration, Category category, List<Actor> actors) {
@@ -58,6 +53,14 @@ public class Film {
         this.actors = actors;
     }
     
+    public List<Actor> getActors() {
+        return this.actors;
+    }
+
+    public Director getDirector() {
+        return this.director;
+    }
+
     public String getTitle(){
         return title;
     }
@@ -101,4 +104,13 @@ public class Film {
     public void setDirector(Director director) {
         this.director = director;
     }
+
+    public Theatre getTheatre() {
+        return this.theatre;
+    }
+
+    public void setTheatre(Theatre theatre) {
+        this.theatre = theatre;
+    }
+
 }

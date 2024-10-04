@@ -16,6 +16,8 @@ public class CreateFilm {
 
     private String directorId;
 
+    private String theatreId;
+
     public String getDirectorId() {
         return this.directorId;
     }
@@ -55,4 +57,13 @@ public class CreateFilm {
     public void setCategory(Category category) {
         this.category = category;
     }
+
+    public String getTheatreId() {
+        return this.theatreId;
+    }
+
+    public void setTheatreId(String theatreId) {
+        this.theatreId = theatreId;
+    }
+
 }
