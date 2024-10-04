@@ -40,52 +40,65 @@ public class Film {
     @JoinColumn(name = "director_id")
     private Director director;
 
-    public Film() {}
+    public List<Actor> getActors() {
+        return this.actors;
+    }
 
+    public Director getDirector() {
+        return this.director;
+    }
+
+    
+    public Film() {}
+    
     public Film(String title, String duration, Category category, List<Actor> actors) {
         this.title = title;
         this.duration = duration;
         this.category = category;
         this.actors = actors;
     }
-
+    
     public String getTitle(){
         return title;
     }
-
+    
     public String getDuration(){
         return duration;
     }
-
+    
     public String getId(){
         return id;
     }
-
+    
     public Category getCategory(){
         return category;
     }
-
+    
     public List<Actor> geActors(){
         return actors;
     }
-
+    
     public void setTitle(String title) {
         this.title = title;
     }
-
+    
     public void setDuration(String duration) {
         this.duration = duration;
     }
-
+    
     public void setId(String id) {
         this.id = id;
     }
-
+    
     public void setCategory(Category category){
         this.category = category;
     }
-
+    
     public void setActors(List<Actor> actors){
         this.actors = actors;
+    }
+
+    public void setDirector(Director director) {
+        this.director = director;
     }
 }

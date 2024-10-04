@@ -14,6 +14,16 @@ public class CreateFilm {
 
     private List<Actor> actors;
 
+    private String directorId;
+
+    public String getDirectorId() {
+        return this.directorId;
+    }
+
+    public void setDirectorId(String directorId) {
+        this.directorId = directorId;
+    }
+
     public List<Actor> getActors() {
         return this.actors;
     }
