@@ -2,7 +2,6 @@ package org.efrei.start.controllers;
 
 import java.util.List;
 
-import org.apache.catalina.connector.Response;
 import org.efrei.start.dto.CreateFilm;
 import org.efrei.start.models.Film;
 import org.efrei.start.services.FilmService;

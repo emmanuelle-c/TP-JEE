@@ -43,10 +43,12 @@ public class ActorService {
         repository.deleteById(id);
     }
 
-    public void update(String id, Actor actor) {
+    public void update(String id, CreateActor createActor) {
         Actor updateActor = findById(id);
-        updateActor.setName(actor.getName());
-        updateActor.setFirstname(actor.getFirstname());
+        Film film = FilmService.findById(createActor.getFilmId());
+        updateActor.setName(createActor.getName());
+        updateActor.setFirstname(createActor.getFirstname());
+        updateActor.setFilm(film);
         repository.save(updateActor);
     }
 }

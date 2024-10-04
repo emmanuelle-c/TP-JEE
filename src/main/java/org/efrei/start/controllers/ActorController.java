@@ -58,12 +58,12 @@ public class ActorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Actor> update(@PathVariable String id, @RequestBody Actor actor) {
+    public ResponseEntity<Actor> update(@PathVariable String id, @RequestBody CreateActor actor) {
         Actor oldActor = service.findById(id);
         if (oldActor == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         service.update(id, actor);
-        return new ResponseEntity<>(actor, HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

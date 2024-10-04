@@ -6,5 +6,5 @@ public enum Category {
     DRAMA,
     PASSION,
     SCI_FI,
-    HUMOUR,
+    COMEDY,
 }

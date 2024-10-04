@@ -31,6 +31,7 @@ public class FilmService {
         Film film = new Film();
         film.setTitle(createFilm.getTitle());
         film.setCategory(createFilm.getCategory());
+        film.setDuration(createFilm.getDuration());
         repository.save(film);
     }
 
@@ -43,7 +44,6 @@ public class FilmService {
         updateFilm.setTitle(film.getTitle());
         updateFilm.setDuration(film.getDuration());
         updateFilm.setCategory(film.getCategory());
-        updateFilm.setActors(film.geActors());
         repository.save(updateFilm);
     }
 }
