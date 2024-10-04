@@ -17,11 +17,13 @@ public class FilmService {
     private final FilmRepository repository;
 
     private final DirectorService directorService;
+    private final TheatreService theatreService;
 
     @Autowired
-    public FilmService(FilmRepository repository, DirectorService directorService) {
+    public FilmService(FilmRepository repository, DirectorService directorService, TheatreService theatreService) {
         this.repository = repository;
         this.directorService = directorService;
+        this.theatreService = theatreService;
     }
 
     public List<Film> findAll() {
@@ -35,7 +37,7 @@ public class FilmService {
     public void create(CreateFilm createFilm) {
         Film film = new Film();
         Director director = directorService.findById(createFilm.getDirectorId());
-        Theatre theatre = new Theatre();
+        Theatre theatre = theatreService.findById(createFilm.getTheatreId());
         film.setTitle(createFilm.getTitle());
         film.setCategory(createFilm.getCategory());
         film.setDuration(createFilm.getDuration());
@@ -51,7 +53,7 @@ public class FilmService {
     public void update(String id, CreateFilm film) {
         Film updateFilm = findById(id);
         Director director = directorService.findById(film.getDirectorId());
-        Theatre theatre = new Theatre();
+        Theatre theatre = theatreService.findById(film.getTheatreId());
         updateFilm.setTitle(film.getTitle());
         updateFilm.setDuration(film.getDuration());
         updateFilm.setCategory(film.getCategory());
